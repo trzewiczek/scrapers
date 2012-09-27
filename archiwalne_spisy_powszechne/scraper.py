@@ -35,6 +35,6 @@ for i in range(9):
       pdf_link = pat.findall(popup.body['onload']).pop()
 
       # collect results as wget commands with an entry title as a filename
-      f.write(u'wget http://statlibr.stat.gov.pl%s %s-%s.pdf\n' % (pdf_link, new_title.strip('-'), i))
+      f.write(u'wget http://statlibr.stat.gov.pl%s -O %s-%s.pdf\n' % (pdf_link, new_title.strip('-'), i))
 
 f.close()
