@@ -32,9 +32,9 @@ for i in range(9):
       popup = bs(urlopen(popup_link).read())
 
       # final pdf link extracted from the popup window
-      pdf_link = pat.findall(popup.body['onload']).pop()
+      pdf_link = 'http://statlibr.stat.gov.pl' + pat.findall(popup.body['onload']).pop()
 
-      # collect results as wget commands with an entry title as a filename
-      f.write(u'wget http://statlibr.stat.gov.pl%s -O %s-%s.pdf\n' % (pdf_link, new_title.strip('-'), i))
-
-f.close()
+      print '>>> Saving: %s' % new_title
+      f = open('%s-%s.pdf' % (new_title.strip('-'), i), 'wb')
+      f.write(urlopen(pdf_link).read())
+      f.close()
