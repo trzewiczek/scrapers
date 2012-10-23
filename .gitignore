@@ -29,3 +29,13 @@ pip-log.txt
 # vim swps
 *.swp
 *.swo
+
+# scraping results
+*.pdf
+*.csv
+*.doc
+*.zip
+*.odt
+*.xsl
+*.ods
+*.ppt

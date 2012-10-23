@@ -1,5 +1,8 @@
 # coding: utf-8
-from BeautifulSoup import BeautifulSoup as bs
+try:
+  from BeautifulSoup import BeautifulSoup as bs
+except:
+  from bs4 import BeautifulSoup as bs
 from urllib import urlopen
 from datetime import *
 import codecs
